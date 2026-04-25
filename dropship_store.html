@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NestLux — Premium Home & Kitchen | UAE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;--gold2:#f0d080;--dark:#0f0f0f;--dark2:#1a1a1a;--dark3:#232323;
+  --light:#f9f6f0;--light2:#ede8df;--text:#1a1a1a;--muted:#7a7065;
+  --white:#ffffff;--red:#c0392b;--green:#1e7e34;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--light);color:var(--text);min-height:100vh}
+
+/* NAV */
+nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:1px solid #2a2a2a}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);letter-spacing:2px;cursor:pointer}
+.logo span{color:var(--white);font-weight:300}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:#ccc;text-decoration:none;font-size:.875rem;letter-spacing:.5px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-icon{background:none;border:none;color:#ccc;cursor:pointer;font-size:1.2rem;position:relative;transition:color .2s}
+.nav-icon:hover{color:var(--gold)}
+.cart-badge{position:absolute;top:-6px;right:-6px;background:var(--gold);color:var(--dark);font-size:.6rem;font-weight:700;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center}
+.btn-nav{background:var(--gold);color:var(--dark);border:none;padding:.45rem 1.2rem;border-radius:4px;font-size:.8rem;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:all .2s}
+.btn-nav:hover{background:var(--gold2)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#1c1408 60%,#2a1f0a 100%);min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-tag{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.75rem;letter-spacing:3px;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:2px;margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.5rem);color:var(--white);line-height:1.15;margin-bottom:1.2rem;font-weight:700}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#b0a898;font-size:1.1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7;font-weight:300}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--dark);border:none;padding:.9rem 2.4rem;border-radius:4px;font-size:.95rem;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:all .25s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.5);padding:.9rem 2.4rem;border-radius:4px;font-size:.95rem;cursor:pointer;letter-spacing:.5px;transition:all .25s}
+.btn-outline:hover{background:rgba(201,168,76,.1);border-color:var(--gold)}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700}
+.stat-label{font-size:.75rem;color:#7a7065;letter-spacing:1px;text-transform:uppercase;margin-top:.2rem}
+
+/* TRUST BAR */
+.trust-bar{background:var(--dark2);padding:1rem 2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;border-bottom:1px solid #2a2a2a}
+.trust-item{display:flex;align-items:center;gap:.6rem;color:#9a9088;font-size:.82rem;letter-spacing:.3px}
+.trust-item span:first-child{font-size:1rem;color:var(--gold)}
+
+/* SECTIONS */
+.section{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-tag{display:inline-block;color:var(--gold);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:.8rem;font-weight:500}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--dark);line-height:1.2;margin-bottom:.8rem}
+.section-sub{color:var(--muted);font-size:.95rem;max-width:480px;margin:0 auto;line-height:1.6}
+
+/* CATEGORIES */
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.cat-card{background:var(--white);border-radius:8px;padding:2rem 1rem;text-align:center;cursor:pointer;border:1px solid #e8e2d9;transition:all .25s;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:var(--gold);opacity:0;transition:opacity .25s}
+.cat-card:hover::before{opacity:.05}
+.cat-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 8px 30px rgba(201,168,76,.15)}
+.cat-icon{font-size:2.2rem;margin-bottom:.8rem;display:block}
+.cat-name{font-size:.88rem;font-weight:500;color:var(--dark);letter-spacing:.3px}
+.cat-count{font-size:.75rem;color:var(--muted);margin-top:.2rem}
+
+/* PRODUCTS */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+.product-card{background:var(--white);border-radius:10px;overflow:hidden;border:1px solid #e8e2d9;transition:all .3s;cursor:pointer}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.1);border-color:var(--gold)}
+.product-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--light);position:relative;overflow:hidden}
+.product-badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:.68rem;font-weight:600;padding:.25rem .6rem;border-radius:3px;letter-spacing:.5px}
+.product-badge.new{background:var(--dark)}
+.product-badge.hot{background:#e67e22}
+.wishlist-btn{position:absolute;top:12px;right:12px;background:var(--white);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.wishlist-btn:hover{background:var(--gold);color:var(--dark)}
+.product-info{padding:1.2rem}
+.product-supplier{font-size:.7rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:.3rem;font-weight:500}
+.product-name{font-size:.95rem;font-weight:500;color:var(--dark);margin-bottom:.4rem;line-height:1.3}
+.product-rating{display:flex;align-items:center;gap:.4rem;margin-bottom:.8rem}
+.stars{color:var(--gold);font-size:.8rem;letter-spacing:1px}
+.rating-count{font-size:.75rem;color:var(--muted)}
+.product-price{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
+.price-current{font-size:1.3rem;font-weight:600;color:var(--dark);font-family:'Playfair Display',serif}
+.price-old{font-size:.85rem;color:var(--muted);text-decoration:line-through}
+.price-save{font-size:.72rem;color:var(--green);font-weight:500}
+.product-meta{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-bottom:.8rem}
+.btn-cart{width:100%;background:var(--dark);color:var(--white);border:none;padding:.7rem;border-radius:6px;font-size:.85rem;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:all .25s}
+.btn-cart:hover{background:var(--gold);color:var(--dark)}
+
+/* SUPPLIER SECTION */
+.supplier-section{background:var(--dark);padding:5rem 2rem}
+.supplier-inner{max-width:1200px;margin:0 auto}
+.supplier-header{text-align:center;margin-bottom:3rem}
+.supplier-header .section-title{color:var(--white)}
+.supplier-header .section-sub{color:#7a7065}
+.suppliers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.supplier-card{background:var(--dark2);border:1px solid #2a2a2a;border-radius:10px;padding:1.8rem;transition:all .3s}
+.supplier-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.supplier-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin-bottom:.6rem;font-weight:600}
+.supplier-country{font-size:.72rem;color:#5a5248;letter-spacing:1px;text-transform:uppercase;margin-bottom:.8rem}
+.supplier-desc{font-size:.85rem;color:#8a8078;line-height:1.6;margin-bottom:1rem}
+.supplier-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.supplier-tag{background:rgba(201,168,76,.1);color:var(--gold);font-size:.7rem;padding:.2rem .6rem;border-radius:3px;border:1px solid rgba(201,168,76,.2)}
+.supplier-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:1.2rem}
+.sup-stat{text-align:center;background:var(--dark3);border-radius:6px;padding:.6rem .4rem}
+.sup-stat-val{font-size:.95rem;font-weight:600;color:var(--white);font-family:'Playfair Display',serif}
+.sup-stat-label{font-size:.65rem;color:#5a5248;margin-top:.1rem}
+.btn-supplier{width:100%;background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:.65rem;border-radius:6px;font-size:.82rem;cursor:pointer;transition:all .25s;letter-spacing:.5px}
+.btn-supplier:hover{background:var(--gold);color:var(--dark)}
+
+/* HOW IT WORKS */
+.how-section{background:var(--light2);padding:5rem 2rem}
+.how-inner{max-width:1000px;margin:0 auto}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
+.step{text-align:center;padding:2rem 1.5rem;background:var(--white);border-radius:10px;border:1px solid #e0dbd1;position:relative}
+.step-num{width:44px;height:44px;background:var(--dark);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin:0 auto 1rem}
+.step-icon{font-size:2rem;margin-bottom:.8rem;display:block}
+.step h3{font-size:.95rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
+.step p{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* CART SIDEBAR */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-sidebar{position:fixed;top:0;right:0;width:380px;max-width:100vw;height:100vh;background:var(--white);z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.15)}
+.cart-sidebar.open{transform:translateX(0)}
+.cart-header{padding:1.5rem;border-bottom:1px solid #e8e2d9;display:flex;justify-content:space-between;align-items:center}
+.cart-header h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark)}
+.cart-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);transition:color .2s}
+.cart-close:hover{color:var(--dark)}
+.cart-items{flex:1;overflow-y:auto;padding:1rem 1.5rem}
+.cart-item{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid #f0ece5}
+.cart-item-img{width:60px;height:60px;background:var(--light);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:.85rem;font-weight:500;color:var(--dark);margin-bottom:.3rem;line-height:1.3}
+.cart-item-price{font-size:.9rem;font-weight:600;color:var(--dark);font-family:'Playfair Display',serif}
+.cart-item-qty{display:flex;align-items:center;gap:.5rem;margin-top:.4rem}
+.qty-btn{background:var(--light2);border:none;width:24px;height:24px;border-radius:4px;cursor:pointer;font-size.9rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.qty-btn:hover{background:var(--gold);color:var(--dark)}
+.qty-num{font-size:.85rem;font-weight:500;min-width:20px;text-align:center}
+.cart-remove{background:none;border:none;color:#ccc;cursor:pointer;font-size.85rem;padding:.2rem;transition:color .2s}
+.cart-remove:hover{color:var(--red)}
+.cart-footer{padding:1.5rem;border-top:1px solid #e8e2d9;background:var(--light)}
+.cart-total-row{display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.9rem;color:var(--muted)}
+.cart-total-final{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:600;color:var(--dark);font-family:'Playfair Display',serif;margin:.8rem 0 1.2rem}
+.btn-checkout{width:100%;background:var(--dark);color:var(--white);border:none;padding:1rem;border-radius:6px;font-size:.95rem;font-weight:500;cursor:pointer;letter-spacing:.5px;transition:all .25s}
+.btn-checkout:hover{background:var(--gold);color:var(--dark)}
+.cart-empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.cart-empty-icon{font-size:3rem;margin-bottom:1rem;display:block;opacity:.4}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--dark);color:var(--white);padding:.8rem 1.8rem;border-radius:6px;font-size:.85rem;border-left:3px solid var(--gold);z-index:300;transition:transform .3s;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* FOOTER */
+footer{background:var(--dark);color:#7a7065;padding:3rem 2rem;text-align:center;border-top:1px solid #2a2a2a}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);margin-bottom:.5rem;letter-spacing:2px}
+.footer-text{font-size:.82rem;line-height:1.7;max-width:500px;margin:0 auto .8rem}
+.footer-note{font-size:.75rem;color:#4a4440;border-top:1px solid #2a2a2a;padding-top:1rem;margin-top:1rem}
+
+/* PRODUCT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:12px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95);transition:transform .3s}
+.modal-overlay.open .modal{transform:scale(1)}
+.modal-top{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.modal-img{height:360px;display:flex;align-items:center;justify-content:center;font-size:6rem;background:var(--light);border-radius:12px 0 0 0}
+.modal-info{padding:2rem}
+.modal-close-btn{position:absolute;top:1rem;right:1rem;background:var(--white);border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.modal-desc{font-size:.85rem;color:var(--muted);line-height:1.7;margin:1rem 0}
+.modal-features{list-style:none;margin:1rem 0}
+.modal-features li{font-size:.83rem;color:var(--text);padding:.3rem 0;border-bottom:1px solid #f0ece5;display:flex;gap:.5rem}
+.modal-features li::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+.btn-modal-cart{width:100%;background:var(--dark);color:var(--white);border:none;padding:.9rem;border-radius:6px;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:1rem;transition:all .25s;letter-spacing:.5px}
+.btn-modal-cart:hover{background:var(--gold);color:var(--dark)}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .nav-links{display:none}
+  .modal-top{grid-template-columns:1fr}
+  .modal-img{border-radius:12px 12px 0 0;height:240px}
+  .hero-stats{gap:1.5rem}
+  .trust-bar{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="scrollToTop()">Nest<span>Lux</span></div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="scrollTo('categories')">Categories</a></li>
+    <li><a href="#" onclick="scrollTo('products')">Shop</a></li>
+    <li><a href="#" onclick="scrollTo('suppliers')">Suppliers</a></li>
+    <li><a href="#" onclick="scrollTo('how')">How It Works</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon" onclick="toggleCart()" title="Cart">
+      🛒
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+    <button class="btn-nav">Sign In</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">✦ Free Shipping UAE &amp; GCC ✦</div>
+    <h1>Elevate Your Home<br/>with <span>Premium</span> Style</h1>
+    <p>Curated home &amp; kitchen essentials sourced from verified global suppliers — delivered to your door across UAE &amp; the Middle East.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollTo('products')">Shop Now</button>
+      <button class="btn-outline" onclick="scrollTo('suppliers')">View Suppliers</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Verified Suppliers</div></div>
+      <div class="stat"><div class="stat-num">48h</div><div class="stat-label">UAE Delivery</div></div>
+      <div class="stat"><div class="stat-num">4.8★</div><div class="stat-label">Avg Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>🚚</span><span>Free shipping on AED 199+</span></div>
+  <div class="trust-item"><span>✅</span><span>Verified global suppliers</span></div>
+  <div class="trust-item"><span>↩️</span><span>30-day easy returns</span></div>
+  <div class="trust-item"><span>💳</span><span>Secure UAE payment</span></div>
+  <div class="trust-item"><span>📦</span><span>Ships from UAE warehouse</span></div>
+</div>
+
+<!-- CATEGORIES -->
+<div id="categories">
+<div class="section">
+  <div class="section-header">
+    <div class="section-tag">Browse by Category</div>
+    <h2 class="section-title">Shop the Collection</h2>
+    <p class="section-sub">Everything you need to transform your home, from kitchen essentials to elegant décor.</p>
+  </div>
+  <div class="categories-grid">
+    <div class="cat-card" onclick="filterProducts('cookware')"><span class="cat-icon">🍳</span><div class="cat-name">Cookware</div><div class="cat-count">48 items</div></div>
+    <div class="cat-card" onclick="filterProducts('storage')"><span class="cat-icon">🗄️</span><div class="cat-name">Storage & Organizers</div><div class="cat-count">62 items</div></div>
+    <div class="cat-card" onclick="filterProducts('decor')"><span class="cat-icon">🪴</span><div class="cat-name">Home Décor</div><div class="cat-count">95 items</div></div>
+    <div class="cat-card" onclick="filterProducts('appliances')"><span class="cat-icon">☕</span><div class="cat-name">Kitchen Appliances</div><div class="cat-count">37 items</div></div>
+    <div class="cat-card" onclick="filterProducts('bedding')"><span class="cat-icon">🛏️</span><div class="cat-name">Bedding & Bath</div><div class="cat-count">54 items</div></div>
+    <div class="cat-card" onclick="filterProducts('lighting')"><span class="cat-icon">💡</span><div class="cat-name">Lighting</div><div class="cat-count">41 items</div></div>
+    <div class="cat-card" onclick="filterProducts('dining')"><span class="cat-icon">🍽️</span><div class="cat-name">Dining & Table</div><div class="cat-count">78 items</div></div>
+    <div class="cat-card" onclick="filterProducts('')"><span class="cat-icon">✨</span><div class="cat-name">All Products</div><div class="cat-count">500+ items</div></div>
+  </div>
+</div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" style="background:var(--light2);padding-bottom:1px">
+<div class="section">
+  <div class="section-header">
+    <div class="section-tag">Trending Now</div>
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Hand-picked bestsellers from our verified dropshipping suppliers — ready to ship across UAE.</p>
+  </div>
+  <div class="products-grid" id="products-grid"></div>
+</div>
+</div>
+
+<!-- SUPPLIERS -->
+<div id="suppliers">
+<div class="supplier-section">
+  <div class="supplier-inner">
+    <div class="supplier-header">
+      <div class="section-tag" style="color:var(--gold)">Verified Dropship Suppliers</div>
+      <h2 class="section-title">Trusted Wholesale Partners</h2>
+      <p class="section-sub">We source directly from these verified platforms — all compatible with UAE dropshipping.</p>
+    </div>
+    <div class="suppliers-grid" id="suppliers-grid"></div>
+  </div>
+</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how">
+<div class="how-section">
+  <div class="how-inner">
+    <div class="section-header">
+      <div class="section-tag">Simple Process</div>
+      <h2 class="section-title">How Dropshipping Works</h2>
+      <p class="section-sub">No inventory, no warehouse — just profit. Here's how our model works.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <span class="step-icon">🛍️</span>
+        <h3>Customer Orders</h3>
+        <p>Customer places an order on your NestLux store and pays retail price.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span class="step-icon">📋</span>
+        <h3>You Order Wholesale</h3>
+        <p>You purchase the product from the supplier at wholesale price — only after the sale.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span class="step-icon">🚚</span>
+        <h3>Supplier Ships</h3>
+        <p>Supplier ships directly to your customer in UAE/GCC with your branding.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <span class="step-icon">💰</span>
+        <h3>You Keep Profit</h3>
+        <p>You keep the margin between retail price and wholesale cost — 30–70% profit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">NestLux</div>
+  <p class="footer-text">Premium Home &amp; Kitchen products delivered across UAE, Saudi Arabia, Qatar, Kuwait &amp; the GCC. All products sourced from verified global dropshipping suppliers.</p>
+  <div>📧 support@nestlux.ae &nbsp;|&nbsp; 📞 +971 4 XXX XXXX &nbsp;|&nbsp; 📍 Dubai, UAE</div>
+  <div class="footer-note">© 2025 NestLux. All rights reserved. Products sourced from AliExpress, CJ Dropshipping, Spocket & Alibaba verified suppliers. This is a demonstration store.</div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total-row"><span>Subtotal</span><span id="cart-subtotal">AED 0</span></div>
+    <div class="cart-total-row"><span>Shipping</span><span style="color:var(--green)">Free</span></div>
+    <div class="cart-total-final"><span>Total</span><span id="cart-total">AED 0</span></div>
+    <button class="btn-checkout">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-top">
+      <div class="modal-img" id="modal-img"></div>
+      <div class="modal-info" style="position:relative">
+        <button class="modal-close-btn" onclick="closeModalDirect()" style="position:absolute">✕</button>
+        <div id="modal-supplier" style="font-size:.7rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;font-weight:500;margin-bottom:.4rem"></div>
+        <h2 id="modal-name" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark);line-height:1.2;margin-bottom:.5rem"></h2>
+        <div id="modal-rating" style="display:flex;align-items:center;gap:.4rem;margin-bottom:.8rem"></div>
+        <div id="modal-price" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--dark);margin-bottom:.5rem"></div>
+        <p id="modal-desc" class="modal-desc"></p>
+        <ul id="modal-features" class="modal-features"></ul>
+        <div id="modal-meta" style="font-size:.75rem;color:var(--muted);margin:.8rem 0"></div>
+        <button class="btn-modal-cart" id="modal-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const products = [
+  {id:1,name:"Premium Non-Stick Cookware Set",emoji:"🍳",category:"cookware",price:349,oldPrice:499,rating:4.8,reviews:2341,badge:"SALE",supplier:"CJ Dropshipping",supplierCountry:"China",moq:"1 unit",shipping:"5–8 days UAE",profit:"45%",desc:"Professional-grade 5-piece non-stick cookware set with marble coating. Induction compatible, PFOA-free, dishwasher safe. Perfect for modern UAE kitchens.",features:["5-piece set: 2 pots, 2 pans, 1 sauté pan","Marble non-stick coating — PFOA free","Induction, gas & electric compatible","Ergonomic heat-resistant handles","Oven safe up to 230°C"]},
+  {id:2,name:"Bamboo Kitchen Organizer Set",emoji:"🗄️",category:"storage",price:189,oldPrice:null,rating:4.7,reviews:1876,badge:"NEW",supplier:"Spocket (US Supplier)",supplierCountry:"USA",moq:"1 unit",shipping:"3–5 days UAE",profit:"55%",desc:"Elegant bamboo drawer organizer set — 6 compartment trays for utensils, cutlery and kitchen essentials. Eco-friendly and stylish.",features:["6 modular bamboo trays","Expandable to fit any drawer size","100% natural sustainable bamboo","Non-slip base — stays in place","Wipe-clean surface"]},
+  {id:3,name:"Aesthetic Ceramic Vase Collection",emoji:"🏺",category:"decor",price:129,oldPrice:179,rating:4.9,reviews:3102,badge:"HOT",supplier:"AliExpress Verified",supplierCountry:"China",moq:"1 unit",shipping:"7–12 days UAE",profit:"60%",desc:"Minimalist Scandinavian-style ceramic vase set of 3 in matte finish. Boho aesthetic perfect for UAE living rooms and open-plan spaces.",features:["Set of 3 different sizes","Matte ceramic glaze finish","Weighted flat base — stable","100% handcrafted","Waterproof interior — use with real flowers"]},
+  {id:4,name:"Smart Milk Frother & Coffee Maker",emoji:"☕",category:"appliances",price:279,oldPrice:349,rating:4.6,reviews:988,badge:"SALE",supplier:"Alibaba Wholesale",supplierCountry:"China",moq:"2 units",shipping:"10–14 days UAE",profit:"40%",desc:"2-in-1 electric milk frother and pour-over coffee maker. Makes barista-quality lattes, cappuccinos and flat whites at home.",features:["Hot & cold frothing modes","Auto shut-off safety feature","1200W rapid heating element","BPA-free stainless steel jug","Includes 2 frothing whisks"]},
+  {id:5,name:"Luxury Egyptian Cotton Towel Set",emoji:"🛁",category:"bedding",price:219,oldPrice:null,rating:4.8,reviews:4210,badge:"NEW",supplier:"Spocket (EU Supplier)",supplierCountry:"Portugal",moq:"1 unit",shipping:"4–6 days UAE",profit:"50%",desc:"Hotel-quality 6-piece Egyptian cotton towel set. 600 GSM ultra-plush absorbency. Available in 8 colours to match any UAE bathroom.",features:["6-piece set: 2 bath, 2 hand, 2 face","600 GSM ultra-soft Egyptian cotton","Quick-dry technology","Colour-safe — won't fade after washing","OEKO-TEX certified safe"]},
+  {id:6,name:"Nordic Pendant Light (Rattan)",emoji:"💡",category:"lighting",price:159,oldPrice:199,rating:4.7,reviews:1543,badge:"SALE",supplier:"CJ Dropshipping",supplierCountry:"China",moq:"1 unit",shipping:"8–12 days UAE",profit:"65%",desc:"Handwoven rattan pendant light with warm Edison bulb. Trending boho-Nordic style, perfect for dining rooms and bedroom corners in Dubai apartments.",features:["Handwoven natural rattan shade","E27 bulb socket — bulb included","3m adjustable cord length","Compatible with standard UAE 220V","Max 60W — energy efficient"]},
+  {id:7,name:"Japanese Cast Iron Teapot Set",emoji:"🍵",category:"dining",price:299,oldPrice:399,rating:4.9,reviews:762,badge:"HOT",supplier:"Alibaba Wholesale",supplierCountry:"Japan",moq:"2 units",shipping:"12–16 days UAE",profit:"55%",desc:"Authentic Japanese cast iron tetsubin teapot with 4 teacups. Hand-enamelled interior, retains heat for hours. A statement piece for any UAE home.",features:["Traditional Japanese cast iron","Enamel-coated rust-resistant interior","Retains heat for 60+ minutes","Includes 4 matching teacups","Trivet and infuser basket included"]},
+  {id:8,name:"Marble Effect Serving Board Set",emoji:"🍽️",category:"dining",price:149,oldPrice:null,rating:4.6,reviews:2087,badge:"NEW",supplier:"Spocket (US Supplier)",supplierCountry:"USA",moq:"1 unit",shipping:"3–5 days UAE",profit:"58%",desc:"Luxurious marble-effect acacia wood serving board set of 3. Perfect for charcuterie, cheese and entertaining guests in your UAE home.",features:["Set of 3 graduated sizes","Acacia wood with marble inlay","Food-safe mineral oil finish","Built-in hanging loop","Doubles as stunning wall décor"]}
+];
+
+const suppliers = [
+  {name:"AliExpress",country:"🇨🇳 China",desc:"World's largest dropshipping marketplace with millions of home & kitchen products. Ideal for UAE sellers starting out with low MOQ.",tags:["Low MOQ","Home & Kitchen","Wide range","ePacket to UAE"],stats:[{val:"200M+",label:"Products"},{val:"2–3%",label:"Avg Margin"},{val:"7–15d",label:"UAE Ship"}],url:"https://www.aliexpress.com"},
+  {name:"CJ Dropshipping",country:"🇨🇳 China",desc:"Professional dropshipping supplier with UAE warehouse. Fast shipping, product sourcing service, white-label packaging available.",tags:["UAE Warehouse","White Label","No MOQ","Auto Fulfillment"],stats:[{val:"400K+",label:"Products"},{val:"40–60%",label:"Profit"},{val:"3–7d",label:"UAE Ship"}],url:"https://cjdropshipping.com"},
+  {name:"Spocket",country:"🇺🇸 USA / 🇪🇺 EU",desc:"Premium supplier network from US and EU. Higher quality products, faster shipping, and branded invoicing. Great for positioning NestLux as luxury.",tags:["Premium Quality","Fast Ship","Branded Invoice","US/EU Goods"],stats:[{val:"60K+",label:"Products"},{val:"30–60%",label:"Profit"},{val:"3–5d",label:"UAE Ship"}],url:"https://spocket.co"},
+  {name:"Alibaba",country:"🇨🇳 China",desc:"Wholesale marketplace for bulk orders. Best for scaling — negotiate directly with manufacturers for private label home & kitchen products.",tags:["Bulk Orders","Private Label","Manufacturer Direct","MOQ 50+"],stats:[{val:"100M+",label:"Listings"},{val:"50–70%",label:"Margin"},{val:"10–20d",label:"Ship"}],url:"https://alibaba.com"},
+  {name:"Noon / Amazon UAE",country:"🇦🇪 UAE",desc:"List your dropshipped products directly on Noon and Amazon UAE marketplace to reach millions of local shoppers without needing your own traffic.",tags:["UAE Platform","Huge Traffic","FBN Available","AED Payments"],stats:[{val:"10M+",label:"UAE Users"},{val:"15–35%",label:"Commission"},{val:"1–2d",label:"Delivery"}],url:"https://noon.com"},
+  {name:"Oberlo / DSers",country:"🌐 Global",desc:"Shopify-native dropshipping apps that automate order fulfilment from AliExpress directly to your store. Essential tool for running NestLux efficiently.",tags:["Shopify Plugin","Auto-Fulfill","Price Auto-Update","Order Tracking"],stats:[{val:"Unlimited",label:"Products"},{val:"Free",label:"Basic Plan"},{val:"Auto",label:"Fulfillment"}],url:"https://dsers.com"}
+];
+
+let cart = [];
+let currentFilter = '';
+
+function renderProducts(filter=''){
+  const grid = document.getElementById('products-grid');
+  const filtered = filter ? products.filter(p=>p.category===filter) : products;
+  grid.innerHTML = filtered.map(p=>`
+    <div class="product-card" onclick="openModal(${p.id})">
+      <div class="product-img">
+        ${p.badge?`<div class="product-badge ${p.badge==='NEW'?'new':p.badge==='HOT'?'hot':''}">${p.badge}</div>`:''}
+        <button class="wishlist-btn" onclick="event.stopPropagation();wishlist(${p.id})">♡</button>
+        <span style="font-size:4rem">${p.emoji}</span>
+      </div>
+      <div class="product-info">
+        <div class="product-supplier">${p.supplier}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-rating">
+          <span class="stars">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}</span>
+          <span class="rating-count">${p.rating} (${p.reviews.toLocaleString()})</span>
+        </div>
+        <div class="product-price">
+          <span class="price-current">AED ${p.price}</span>
+          ${p.oldPrice?`<span class="price-old">AED ${p.oldPrice}</span><span class="price-save">Save AED ${p.oldPrice-p.price}</span>`:''}
+        </div>
+        <div class="product-meta">
+          <span>📦 ${p.shipping}</span>
+          <span>💰 ${p.profit} margin</span>
+        </div>
+        <button class="btn-cart" onclick="event.stopPropagation();addToCart(${p.id})">Add to Cart</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderSuppliers(){
+  const grid = document.getElementById('suppliers-grid');
+  grid.innerHTML = suppliers.map(s=>`
+    <div class="supplier-card">
+      <div class="supplier-logo">${s.name}</div>
+      <div class="supplier-country">${s.country}</div>
+      <div class="supplier-desc">${s.desc}</div>
+      <div class="supplier-tags">${s.tags.map(t=>`<span class="supplier-tag">${t}</span>`).join('')}</div>
+      <div class="supplier-stats">${s.stats.map(st=>`<div class="sup-stat"><div class="sup-stat-val">${st.val}</div><div class="sup-stat-label">${st.label}</div></div>`).join('')}</div>
+      <button class="btn-supplier" onclick="window.open('${s.url}','_blank')">Visit ${s.name} →</button>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat){
+  currentFilter = cat;
+  renderProducts(cat);
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+
+function addToCart(id){
+  const p = products.find(x=>x.id===id);
+  const existing = cart.find(x=>x.id===id);
+  if(existing) existing.qty++;
+  else cart.push({...p,qty:1});
+  updateCartUI();
+  showToast(`✓ ${p.name} added to cart`);
+}
+
+function updateCartUI(){
+  const total = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cart-badge').textContent=total;
+  const list = document.getElementById('cart-items-list');
+  const footer = document.getElementById('cart-footer');
+  if(cart.length===0){
+    list.innerHTML='<div class="cart-empty"><span class="cart-empty-icon">🛒</span><p>Your cart is empty</p><p style="font-size:.8rem;margin-top:.4rem;color:#aaa">Browse our products to add items</p></div>';
+    footer.style.display='none';
+    return;
+  }
+  footer.style.display='block';
+  list.innerHTML=cart.map(item=>`
+    <div class="cart-item">
+      <div class="cart-item-img">${item.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">AED ${item.price}</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id},1)">+</button>
+          <button class="cart-remove" onclick="removeFromCart(${item.id})" style="margin-left:.3rem;background:none;border:none;color:#ccc;cursor:pointer;font-size:.85rem">✕</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cart-subtotal').textContent=`AED ${subtotal}`;
+  document.getElementById('cart-total').textContent=`AED ${subtotal}`;
+}
+
+function changeQty(id,d){
+  const item = cart.find(x=>x.id===id);
+  if(!item) return;
+  item.qty+=d;
+  if(item.qty<=0) cart=cart.filter(x=>x.id!==id);
+  updateCartUI();
+}
+
+function removeFromCart(id){
+  cart=cart.filter(x=>x.id!==id);
+  updateCartUI();
+}
+
+function toggleCart(){
+  const overlay = document.getElementById('cart-overlay');
+  const sidebar = document.getElementById('cart-sidebar');
+  overlay.classList.toggle('open');
+  sidebar.classList.toggle('open');
+  updateCartUI();
+}
+
+function openModal(id){
+  const p = products.find(x=>x.id===id);
+  document.getElementById('modal-img').innerHTML=`<span style="font-size:6rem">${p.emoji}</span>`;
+  document.getElementById('modal-supplier').textContent=p.supplier+' · '+p.supplierCountry;
+  document.getElementById('modal-name').textContent=p.name;
+  document.getElementById('modal-rating').innerHTML=`<span style="color:var(--gold);font-size:.9rem">${'★'.repeat(Math.floor(p.rating))}</span><span style="font-size:.85rem;color:var(--muted)">${p.rating} · ${p.reviews.toLocaleString()} reviews</span>`;
+  document.getElementById('modal-price').innerHTML=`AED ${p.price}${p.oldPrice?` <span style="font-size:1rem;color:var(--muted);font-family:'DM Sans',sans-serif;text-decoration:line-through;font-weight:400">AED ${p.oldPrice}</span>`:''}`;
+  document.getElementById('modal-desc').textContent=p.desc;
+  document.getElementById('modal-features').innerHTML=p.features.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('modal-meta').innerHTML=`📦 Shipping: ${p.shipping} &nbsp;|&nbsp; 📈 Profit margin: ${p.profit} &nbsp;|&nbsp; 🏭 MOQ: ${p.moq}`;
+  document.getElementById('modal-cart-btn').onclick=()=>{addToCart(id);closeModalDirect()};
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal(e){
+  if(e.target===document.getElementById('modal-overlay')) closeModalDirect();
+}
+
+function closeModalDirect(){
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function wishlist(id){
+  const p = products.find(x=>x.id===id);
+  showToast(`♡ ${p.name} saved to wishlist`);
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function scrollToTop(){
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderProducts();
+renderSuppliers();
+</script>
+</body>
+</html>
